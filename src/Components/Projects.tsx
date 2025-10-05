@@ -1,6 +1,9 @@
+import type { RootState } from "@/Redux/Store";
 import { BiLogoGithub } from "react-icons/bi";
 import { BiLink } from "react-icons/bi";
+import { useSelector } from "react-redux";
 export const Projects = () => {
+  const projectState = useSelector((state: RootState) => state.ProjectData);
   return (
     <div className="flex flex-col bg-white w-full max-w-3xl mt-5 rounded-xl border border-gray-300 shadow ">
       <div>
@@ -13,37 +16,28 @@ export const Projects = () => {
           <div>
             {" "}
             <h4 className="text-xl font-semibold text-gray-800 tracking-tight my-4 mb-4 mx-1 ">
-              JobHunter
+              {projectState.ProjectOne.name}
             </h4>
           </div>
           <div className="flex self-center ">
             <div className="mx-2 cursor-pointer">
-              <a
-                href="https://job-hunter-git-main-vaibhav-mathurs-projects.vercel.app/"
-                target="_blank"
-              >
+              <a href={projectState.ProjectOne.link} target="_blank">
                 <BiLink size={24} />
               </a>
             </div>
             <div className="mx-2 cursor-pointer">
-              <a
-                href="https://github.com/VAIBHAVMATHUR137/JobHunter"
-                target="_blank"
-              >
+              <a href={projectState.ProjectOne.github} target="_blank">
                 <BiLogoGithub size={24} />
               </a>
             </div>
           </div>
         </div>
         <div className="text-base font-sans text-gray-800 leading-relaxed mt-2 mx-1">
-          October 2024 - May 2025
+          {projectState.ProjectOne.date_of_commencement}-
+          {projectState.ProjectOne.date_of_conclusion}
         </div>
         <div className="text-base font-normal text-gray-800 leading-relaxed mt-2 mx-1 pb-2">
-          The project is basically for job seekers as well as employers looking
-          for skilled staff. User can register as either recruiter or job
-          seeker. Recruiter can post a job, view applications for each job they
-          posted. Similarly, job seeker can also apply to multiple jobs posted
-          on the platform.
+          {projectState.ProjectOne.details}
         </div>
       </div>
       <div className="  border-gray-300 mx-4 mt-0 mb-2 ">
@@ -51,35 +45,29 @@ export const Projects = () => {
           <div>
             {" "}
             <h4 className="text-xl font-semibold text-gray-800 tracking-tight my-4 mb-4 mx-1 ">
-              ShopEase
+              {projectState.ProjectTwo.name}
             </h4>
           </div>
           <div className="flex self-center ">
             <div className="mx-2 cursor-pointer">
-              <a href="https://shopease-lime.vercel.app/" target="_blank">
+              <a href={projectState.ProjectTwo.link} target="_blank">
                 {" "}
                 <BiLink size={24} />
               </a>
             </div>
             <div className="mx-2 cursor-pointer">
-              <a
-                href="https://github.com/VAIBHAVMATHUR137/ShopEase_FInal"
-                target="_blank"
-              >
+              <a href={projectState.ProjectTwo.github} target="_blank">
                 <BiLogoGithub size={24} />
               </a>
             </div>
           </div>
         </div>
         <div className="text-base font-sans text-gray-800 leading-relaxed mt-2 mx-1 ">
-          July 2024- September 2024
+          {projectState.ProjectTwo.date_of_commencement}-
+          {projectState.ProjectTwo.date_of_conclusion}
         </div>
         <div className="text-base font-normal text-gray-800 leading-relaxed mt-2 mx-1">
-          An e-commerce platform built with React, Redux Toolkit for state
-          management, and Firebase for backend services including user
-          authentication, user/product databases. Implemented Material UI for
-          responsive design and used vanilla JavaScript for custom sorting and
-          filtering functionalities.
+          {projectState.ProjectTwo.details}
         </div>
       </div>
     </div>

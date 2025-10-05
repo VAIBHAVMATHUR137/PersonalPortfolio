@@ -7,6 +7,7 @@ import { ContactModal } from "./ContactModal";
 export const Blogs = () => {
 
   const contactFlag=useSelector((state:RootState)=>state.flipModal.contactModal)
+  const blogState=useSelector((state:RootState)=>state.BlogData)
   return (
     <div className="flex flex-col bg-white w-full max-w-3xl mt-5 rounded-xl border border-gray-300 shadow">
       <div>
@@ -17,7 +18,7 @@ export const Blogs = () => {
 
       {/* Blog Card */}
       <a
-        href="https://medium.com/@vaibhavmathur128/using-async-thunk-in-redux-to-handle-api-with-demo-mini-project-baea1da0952d"
+        href={blogState.BlogTwo.link}
         target="_blank"
       >
         <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
@@ -33,17 +34,16 @@ export const Blogs = () => {
           {/* Right Side: Content */}
           <div className="w-1/2 pl-4 flex flex-col justify-center">
             <h3 className="text-lg font-semibold text-gray-900">
-              Async Thunk in Redux
+              {blogState.BlogTwo.title}
             </h3>
             <p className="text-sm text-gray-600 mt-2">
-              Learn how to handle async logic cleanly in Redux using async
-              thunks for API calls and side effects.
+              {blogState.BlogTwo.description}
             </p>
           </div>
         </div>
       </a>
       <a
-        href="https://medium.com/@vaibhavmathur128/redux-tool-kit-beginner-friendly-approach-with-live-project-80f644178b2e"
+        href={blogState.BlogOne.link}
         target="_blank"
       >
         {/* Blog Card */}
@@ -60,11 +60,10 @@ export const Blogs = () => {
           {/* Right Side: Content */}
           <div className="w-1/2 pl-4 flex flex-col justify-center">
             <h3 className="text-lg font-semibold text-gray-900">
-              Mastering Redux
+              {blogState.BlogOne.title}
             </h3>
             <p className="text-sm text-gray-600 mt-2">
-              A deep dive into state management with Redux — from basics to
-              advanced patterns.
+              {blogState.BlogOne.description}
             </p>
           </div>
         </div>

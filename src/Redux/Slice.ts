@@ -153,3 +153,34 @@ export const ProjectSlice = createSlice({
   }
 });
 export const ProjectReducer=ProjectSlice.reducer;
+
+interface Blogs{
+  BlogOne:{
+    title:string,
+    description:string,
+    link:string
+  },
+  BlogTwo:{
+    title:string,
+    description:string,
+    link:string
+  }
+}
+const BlogState:Blogs={
+  BlogOne:{
+    title:"Async Thunk in redux",
+    description:"Learn how to handle async logic cleanly in Redux using async thunks for API calls and side effects.",
+    link:"https://medium.com/@vaibhavmathur128/using-async-thunk-in-redux-to-handle-api-with-demo-mini-project-baea1da0952d"
+  },
+  BlogTwo:{
+    title:"Mastering Redux",
+    description:"   A deep dive into state management with Redux — from basics to advanced patterns.",
+    link:"https://medium.com/@vaibhavmathur128/redux-tool-kit-beginner-friendly-approach-with-live-project-80f644178b2e"
+  }
+}
+export const BlogSlice=createSlice({
+  name:"BlogSlice",
+  initialState:BlogState,
+  reducers:{}
+})
+export const BlogReducer= BlogSlice.reducer

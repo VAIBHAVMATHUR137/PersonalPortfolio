@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { ContactReducer, modal, primaryDataReducer, ProjectReducer, skillReducer } from "./Slice";
+import { BlogReducer, ContactReducer, modal, primaryDataReducer, ProjectReducer, skillReducer } from "./Slice";
 const store=configureStore({
     reducer:{
         flipModal:modal,
         skillState:skillReducer,
         Contacts:ContactReducer,
         PrimaryData:primaryDataReducer,
-        ProjectData:ProjectReducer
+        ProjectData:ProjectReducer,
+        BlogData:BlogReducer
     }
 })
 export type RootState = ReturnType<typeof store.getState>;

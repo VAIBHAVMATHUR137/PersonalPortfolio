@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
 import Photograph from "../Images/Photograph.jpg"
 import banner from "../Images/banner.jpeg";
 import { BiLocationPlus } from "react-icons/bi";
 import { BiPaperPlane, BiMessageSquareDetail, BiLogoGithub } from "react-icons/bi";
+import type { RootState } from "@/Redux/Store";
 export const Primary = () => {
+  const userData=useSelector((state:RootState)=>state.PrimaryData);
+  const ContactState = useSelector((state: RootState) => state.Contacts);
   return (
     <div className="bg-white w-full max-w-3xl mt-5 rounded-xl border border-gray-300 shadow">
       {/* Cover Image Section */}
@@ -24,14 +28,14 @@ export const Primary = () => {
       {/* White Card Content */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-6 pt-14 sm:pt-16 pb-6">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold">Vaibhav Mathur</h1>
+          <h1 className="text-xl sm:text-2xl font-bold">{userData.name}</h1>
           <p className="text-gray-600 text-sm sm:text-base">
-            Full Stack Developer
+            {userData.designation}
           </p>
         </div>
         <div className="mt-4 sm:mt-0">
           <a
-            href="https://github.com/VAIBHAVMATHUR137"
+            href={ContactState.Github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline font-medium"
@@ -49,7 +53,7 @@ export const Primary = () => {
       {/* div for city */}
       <div className="text-black/60 ml-6 cursor-pointer hover:text-black">
         <BiLocationPlus />
-        Ghaziabad, Uttar Pradesh, India
+        {ContactState.Location}
       </div>
       {/* div for buttons */}
       <div className="flex ml-6 mt-7 gap-x-2 flex-wrap  ">

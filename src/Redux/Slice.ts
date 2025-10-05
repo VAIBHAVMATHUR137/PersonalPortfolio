@@ -27,6 +27,40 @@ export const ContactSlice=createSlice({
 })
 export const ContactReducer=ContactSlice.reducer
 
+interface PrimaryData {
+  name: string;
+  designation: string;
+  about: string;
+}
+
+const initialPrimaryData: PrimaryData = {
+  name: "Vaibhav Mathur",
+  designation: "Full Stack Developer",
+  about: `I’m a full-stack developer who doesn’t just write code — I engineer workflows. 
+  My obsession is understanding how things work under the hood: from database design 
+  to client-side rendering and everything in between. 
+
+  I recently built a secure, scalable job portal using the MERN stack and TypeScript, 
+  integrating role-based authentication, custom data schemas, and reusable APIs. 
+  Every detail was deliberate — from JWT security to custom job ID validations. 
+
+  When I’m not coding, I’m writing blogs on Medium about full-stack system workflows, 
+  or sharing my debugging experiences on X.`,
+};
+
+export const primarySlice=createSlice({
+  name:'primarySlice',
+  initialState:initialPrimaryData,
+  reducers:{}
+})
+export const primaryDataReducer=primarySlice.reducer
+
+
+
+
+
+
+
 interface modal {
   skillModal:boolean,
   contactModal:boolean

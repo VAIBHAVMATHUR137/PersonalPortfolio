@@ -7,6 +7,7 @@ import { modalReducer } from "../Redux/Slice";
 import { SkillModal } from "./SkillModal";
 export const About = () => {
   const dispatch = useDispatch<AppDispatch>();
+    const userData=useSelector((state:RootState)=>state.PrimaryData);
   const skillFlag=useSelector((state:RootState)=>state.flipModal.skillModal);
   const skills=useSelector((state:RootState)=>state.skillState.skills)
 
@@ -19,15 +20,7 @@ export const About = () => {
           </h2>
         </div>
         <p className="text-base font-normal text-gray-800 leading-relaxed mt-2 mx-4">
-          I'm a full-stack developer who doesnt just write code - I try to
-          engineer workflows. My obsession is with understanding how things work
-          under the hood: from database design to client-side rendering and
-          everything in between. I recently built a secure, scalable job portal
-          using the MERN stack and TypeScript, integrating role-based
-          authentication, custom data schemas, and reusable APIs. Every detail
-          was deliberate - from JWT security to custom job ID validations. When
-          I m not coding, I m writing blogs on medium regarding full stack
-          system workflow, as well as posting my debugging experiences on X
+          {userData.about}
         </p>
 
         <div className="w-5/6 border-2 border-gray-300 rounded-lg self-center my-2 p-4 flex justify-between items-center">

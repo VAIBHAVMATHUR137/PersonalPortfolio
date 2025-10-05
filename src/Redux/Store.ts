@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { modal, skillReducer } from "./Slice";
+import { ContactReducer, modal, skillReducer } from "./Slice";
 const store=configureStore({
     reducer:{
         flipModal:modal,
-        skillState:skillReducer
+        skillState:skillReducer,
+        Contacts:ContactReducer
     }
 })
 export type RootState = ReturnType<typeof store.getState>;

@@ -8,16 +8,18 @@ interface ContactInterface {
   Github: string;
   Location: string;
   Medium: string;
+  Resume:string
 }
 
 const initialContactState: ContactInterface = {
   Linkedin: "www.linkedin.com/in/vaibhav-mathur-a5415b350",
-  ContactNumber: 7060915581,
+  ContactNumber: 9971287149,
   Email: "Mathurvaibhav256@gmail.com",
   X: "@Mathur128",
   Github: "https://github.com/VAIBHAVMATHUR137",
   Location: "Ghaziabad, Uttar Pradesh, India",
   Medium: "https://medium.com/@vaibhavmathur128",
+  Resume:"https://drive.google.com/file/d/1jhIz9bRJjZvCWtljKdmkOiAo6d7VeVmC/view?usp=drive_link"
 };
 
 export const ContactSlice = createSlice({

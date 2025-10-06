@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Photograph from "../Images/Photograph.jpg"
 import banner from "../Images/banner.jpeg";
 import { BiLocationPlus } from "react-icons/bi";
 import { BiPaperPlane, BiMessageSquareDetail, BiLogoGithub } from "react-icons/bi";
-import type { RootState } from "@/Redux/Store";
+import { type AppDispatch, type RootState } from "../Redux/Store"
+import { modalReducer } from "../Redux/Slice";
 export const Primary = () => {
+  const dispatch=useDispatch<AppDispatch>()
   const userData=useSelector((state:RootState)=>state.PrimaryData);
   const ContactState = useSelector((state: RootState) => state.Contacts);
   return (
@@ -58,18 +60,22 @@ export const Primary = () => {
       {/* div for buttons */}
       <div className="flex ml-6 mt-7 gap-x-2 flex-wrap  ">
         <div>
-          <button className="bg-[#0a66c2] text-white rounded-full p-2 font-semibold text-base tracking-wide flex items-center gap-2 hover:bg-[#004182] transition-colors cursor-pointer ">
+          <button className="bg-[#0a66c2] text-white rounded-full p-2 font-semibold text-base tracking-wide flex items-center gap-2 hover:bg-[#004182] transition-colors cursor-pointer "
+          onClick={()=>dispatch(modalReducer({field:"contactModal",value:true}))}>
             <BiPaperPlane />
             <span>Contact Me</span>
           </button>
         </div>
+         <a href={ContactState.Resume} target="_blank">
         <div>
           <button className="bg-white text-[#0a66c2] rounded-full p-2 border-2 border-[#0a66c2] font-semibold text-base tracking-wide flex items-center gap-2 hover:border-[#004182] 
           transition-colors hover:text-[#004182] cursor-pointer mb-2">
+           
             <BiMessageSquareDetail />
             <span>Look Resume</span>
           </button>
         </div>
+        </a>
       </div>
     </div>
   );

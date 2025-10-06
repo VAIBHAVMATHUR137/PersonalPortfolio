@@ -16,7 +16,7 @@ export const Navbar = () => {
   const dispatch = useDispatch<AppDispatch>();
   return (
     <>
-      <div className=" lg:flex justify-between items-center bg-white shadow px-12 flex-wrap">
+      <div className=" hidden lg:flex justify-between items-center bg-white shadow px-12 flex-wrap">
         {/* Logo */}
         <div>
           <img

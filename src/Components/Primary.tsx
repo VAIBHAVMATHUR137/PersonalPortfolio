@@ -27,27 +27,36 @@ export const Primary = () => {
         </div>
       </div>
 
-      {/* White Card Content */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-6 pt-14 sm:pt-16 pb-6">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-bold">{userData.name}</h1>
-          <p className="text-gray-600 text-sm sm:text-base">
-            {userData.designation}
-          </p>
-        </div>
-        <div className="mt-4 sm:mt-0">
-          <a
-            href={ContactState.Github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline font-medium"
-          >
-            <BiLogoGithub/>
-            Github
-          </a>
-        </div>
-        
-      </div>
+{/* White Card Content */}
+<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-6 pt-14 sm:pt-16 pb-6">
+  <div>
+    {/* Name */}
+    <h1 className="text-2xl sm:text-[1.75rem] font-semibold text-gray-900 leading-tight">
+      {userData.name}
+    </h1>
+
+    {/* Designation */}
+    <p className="text-gray-700 text-[0.9375rem] sm:text-base mt-1">
+      {userData.designation}
+    </p>
+
+ 
+  </div>
+
+  {/* Right-side Button or Link */}
+  <div className="mt-4 sm:mt-0 flex items-center gap-2">
+    <a
+      href={ContactState.Github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 text-blue-600 font-medium border border-blue-600 rounded-full px-3 py-1 hover:bg-blue-50 transition"
+    >
+      <BiLogoGithub className="text-lg" />
+      Github
+    </a>
+  </div>
+</div>
+
       {/* div for skills */}
       <div className="mx-6 flex flex-wrap">
         TypeScript | React JS | Redux Toolkit | Tailwind CSS | ShadCN | NodeJS | ExpressJS | MongoDB | Custom Data Models | RESTful Model | MVC Architecture | JWT Auth | Redis | Caching | GitHub

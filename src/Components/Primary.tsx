@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Photograph from "../Images/Photograph.jpg"
-import banner from "../Images/banner.jpeg";
+import banner from "../Images/bg.png"
 import { BiLocationPlus } from "react-icons/bi";
 import { BiPaperPlane, BiMessageSquareDetail, BiLogoGithub } from "react-icons/bi";
 import { type AppDispatch, type RootState } from "../Redux/Store"

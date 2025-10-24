@@ -1,5 +1,6 @@
 import Redux from "../Images/Redux.jpg";
 import Asyncthunk from "../Images/Asyncthunk.jpg";
+import Array from "../Images/Array.png"
 import {  useSelector } from "react-redux";
 import {  type RootState } from "../Redux/Store";
 import { ContactModal } from "./ContactModal";
@@ -67,6 +68,36 @@ export const Blogs = () => {
             </p>
           </div>
         </div>
+        {/* Blog Card */}
+              <a
+        href={blogState.BlogTwo.link}
+        target="_blank"
+      >
+        <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
+          {/* Left Side: Image */}
+          <div className="w-1/2">
+            <img
+              src={Array}
+              alt="Blog"
+              className="w-full aspect-video object-contain rounded-lg bg-gray-100"
+            />
+          </div>
+
+          {/* Right Side: Content */}
+          <div className="w-1/2 pl-4 flex flex-col justify-center">
+            <h3 className="text-lg font-semibold text-gray-900">
+              {blogState.BlogThree.title}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              {blogState.BlogThree.description}
+            </p>
+          </div>
+        </div>
+      </a>
+      <a
+        href={blogState.BlogOne.link}
+        target="_blank"
+      ></a>
       </a>
       {contactFlag && <ContactModal/>}
     </div>

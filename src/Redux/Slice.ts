@@ -166,6 +166,11 @@ interface Blogs{
     title:string,
     description:string,
     link:string
+  },
+  BlogThree:{
+      title:string,
+    description:string,
+    link:string
   }
 }
 const BlogState:Blogs={
@@ -178,6 +183,11 @@ const BlogState:Blogs={
     title:"Mastering Redux",
     description:"   A deep dive into state management with Redux — from basics to advanced patterns.",
     link:"https://medium.com/@vaibhavmathur128/redux-tool-kit-beginner-friendly-approach-with-live-project-80f644178b2e"
+  },
+  BlogThree:{
+    title:"First Order Array functions JavaScript",
+    description:"Explanation of most frequently used functions to operate in array, that are important in job interviews also ",
+    link:"https://medium.com/@vaibhavmathur128/javascript-first-order-functions-every-frontend-developer-must-know-8e6a19c565fb"
   }
 }
 export const BlogSlice=createSlice({

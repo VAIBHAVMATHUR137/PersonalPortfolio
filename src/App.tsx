@@ -1,6 +1,7 @@
 import "./App.css";
 import { About } from "./Components/About";
 import { Blogs } from "./Components/Blogs";
+
 import { Navbar } from "./Components/Navbar";
 import { Primary } from "./Components/Primary";
 import { Projects } from "./Components/Projects";
@@ -24,6 +25,10 @@ function App() {
         <div className="flex justify-center w-full h-full">
           <Blogs/>
         </div>
+        <div className="flex justify-center w-full h-full">
+
+        </div>
+        
    
       </div>
     </>

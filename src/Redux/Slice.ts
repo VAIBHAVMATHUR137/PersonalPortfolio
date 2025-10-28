@@ -171,6 +171,11 @@ interface Blogs{
       title:string,
     description:string,
     link:string
+  },
+  BlogFour:{
+      title:string,
+    description:string,
+    link:string
   }
 }
 const BlogState:Blogs={
@@ -188,6 +193,11 @@ const BlogState:Blogs={
     title:"First Order Array functions JavaScript",
     description:"Explanation of most frequently used functions to operate in array, that are important in job interviews also ",
     link:"https://medium.com/@vaibhavmathur128/javascript-first-order-functions-every-frontend-developer-must-know-8e6a19c565fb"
+  },
+  BlogFour:{
+    title:"Understanding the latest rendering engine of react",
+    description:"An interview guide based on personal experience, to explain what exactly is react fiber, how it is different from previous versions and why it was needed at the first place",
+    link:"https://medium.com/@vaibhavmathur128/react-interview-prep-understanding-how-rendering-works-with-react-8487b86f871c"
   }
 }
 export const BlogSlice=createSlice({

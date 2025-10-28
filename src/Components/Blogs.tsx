@@ -4,6 +4,7 @@ import Array from "../Images/Array.png"
 import {  useSelector } from "react-redux";
 import {  type RootState } from "../Redux/Store";
 import { ContactModal } from "./ContactModal";
+import fiber from "../Images/fiber.jpg"
 
 export const Blogs = () => {
 
@@ -99,7 +100,34 @@ export const Blogs = () => {
         target="_blank"
       ></a>
       </a>
+      {/* Blog Card */}
+      <a
+        href={blogState.BlogFour.link}
+        target="_blank"
+      >
+        <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
+          {/* Left Side: Image */}
+          <div className="w-1/2">
+            <img
+              src={fiber}
+              alt="Blog"
+              className="w-full aspect-video object-contain rounded-lg bg-gray-100"
+            />
+          </div>
+
+          {/* Right Side: Content */}
+          <div className="w-1/2 pl-4 flex flex-col justify-center">
+            <h3 className="text-lg font-semibold text-gray-900">
+              {blogState.BlogFour.title}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              {blogState.BlogFour.description}
+            </p>
+          </div>
+        </div>
+      </a>
       {contactFlag && <ContactModal/>}
     </div>
+    
   );
 };

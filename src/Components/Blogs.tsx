@@ -27,7 +27,7 @@ export const Blogs = () => {
           {/* Left Side: Image */}
           <div className="w-1/2">
             <img
-              src={Asyncthunk}
+              src={Redux}
               alt="Blog"
               className="w-full aspect-video object-contain rounded-lg bg-gray-100"
             />
@@ -53,7 +53,7 @@ export const Blogs = () => {
           {/* Left Side: Image */}
           <div className="w-1/2">
             <img
-              src={Redux}
+              src={Asyncthunk}
               alt="Blog"
               className="w-full aspect-video object-contain rounded-lg bg-gray-100"
             />

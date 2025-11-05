@@ -12,8 +12,8 @@ interface ContactInterface {
 }
 
 const initialContactState: ContactInterface = {
-  Linkedin: "www.linkedin.com/in/vaibhav-mathur-a5415b350",
-  ContactNumber: 9971287149,
+  Linkedin: "https://www.linkedin.com/in/vaibhav-mathur-a5415b350/",
+  ContactNumber: 9911218069,
   Email: "Mathurvaibhav256@gmail.com",
   X: "@Mathur128",
   Github: "https://github.com/VAIBHAVMATHUR137",

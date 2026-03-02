@@ -19,7 +19,7 @@ const initialContactState: ContactInterface = {
   Github: "https://github.com/VAIBHAVMATHUR137",
   Location: "Ghaziabad, Uttar Pradesh, India",
   Medium: "https://medium.com/@vaibhavmathur128",
-  Resume:"https://drive.google.com/file/d/1jhIz9bRJjZvCWtljKdmkOiAo6d7VeVmC/view?usp=drive_link"
+  Resume:"https://drive.google.com/file/d/1x6k3XRf7sJsBoRp-8lcwYsDyd0twPAgQ/view?usp=drive_link"
 };
 
 export const ContactSlice = createSlice({

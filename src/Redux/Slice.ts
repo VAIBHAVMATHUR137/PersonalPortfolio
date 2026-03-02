@@ -192,12 +192,12 @@ const BlogState:Blogs={
   BlogThree:{
     title:"First Order Array functions JavaScript",
     description:"Explanation of most frequently used functions to operate in array, that are important in job interviews also ",
-    link:"https://medium.com/@vaibhavmathur128/javascript-first-order-functions-every-frontend-developer-must-know-8e6a19c565fb"
+    link:"https://www.linkedin.com/pulse/javascript-first-order-functions-every-frontend-developer-mathur-doboc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3D"
   },
   BlogFour:{
     title:"Understanding the latest rendering engine of react",
     description:"An interview guide based on personal experience, to explain what exactly is react fiber, how it is different from previous versions and why it was needed at the first place",
-    link:"https://medium.com/@vaibhavmathur128/react-interview-prep-understanding-how-rendering-works-with-react-8487b86f871c"
+    link:"https://www.linkedin.com/pulse/react-interview-prep-understanding-how-rendering-works-vaibhav-mathur-tblfc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3Dc"
   }
 }
 export const BlogSlice=createSlice({

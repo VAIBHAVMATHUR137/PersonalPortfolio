@@ -8,7 +8,7 @@ interface ContactInterface {
   Github: string;
   Location: string;
   Medium: string;
-  Resume:string
+  Resume: string;
 }
 
 const initialContactState: ContactInterface = {
@@ -19,7 +19,8 @@ const initialContactState: ContactInterface = {
   Github: "https://github.com/VAIBHAVMATHUR137",
   Location: "Ghaziabad, Uttar Pradesh, India",
   Medium: "https://medium.com/@vaibhavmathur128",
-  Resume:"https://drive.google.com/file/d/1x6k3XRf7sJsBoRp-8lcwYsDyd0twPAgQ/view?usp=drive_link"
+  Resume:
+    "https://drive.google.com/file/d/1x6k3XRf7sJsBoRp-8lcwYsDyd0twPAgQ/view?usp=drive_link",
 };
 
 export const ContactSlice = createSlice({
@@ -71,7 +72,7 @@ export const modalSlice = createSlice({
   reducers: {
     modalReducer: (
       state: modal,
-      action: PayloadAction<{ field: keyof modal; value: boolean }>
+      action: PayloadAction<{ field: keyof modal; value: boolean }>,
     ) => {
       state[action.payload.field] = action.payload.value;
     },
@@ -114,16 +115,16 @@ interface ProjectDetails {
     details: string;
     github: string;
     link: string;
-    date_of_commencement:string,
-    date_of_conclusion:string
+    date_of_commencement: string;
+    date_of_conclusion: string;
   };
   ProjectTwo: {
     name: string;
     details: string;
     github: string;
     link: string;
-        date_of_commencement:string,
-    date_of_conclusion:string
+    date_of_commencement: string;
+    date_of_conclusion: string;
   };
 }
 
@@ -134,8 +135,8 @@ const ProjectState: ProjectDetails = {
       "The project is basically for job seekers as well as employers looking for skilled staff. User can register as either recruiter or job seeker. Recruiter can post a job, view applications for each job they posted. Similarly, job seeker can also apply to multiple jobs posted on the platform.",
     github: "https://github.com/VAIBHAVMATHUR137/JobHunter",
     link: "https://job-hunter-git-main-vaibhav-mathurs-projects.vercel.app/",
-    date_of_commencement:"October 2024",
-    date_of_conclusion:"May 2025"
+    date_of_commencement: "October 2024",
+    date_of_conclusion: "May 2025",
   },
   ProjectTwo: {
     name: "ShopEase",
@@ -143,66 +144,68 @@ const ProjectState: ProjectDetails = {
       "An e-commerce platform built with React, Redux Toolkit for state management, and Firebase for backend services including user authentication, user/product databases. Implemented Material UI for responsive design and used vanilla JavaScript for custom sorting and filtering functionalities.",
     github: "https://github.com/VAIBHAVMATHUR137/ShopEase_FInal",
     link: "https://shopease-lime.vercel.app/",
-    date_of_commencement:"July 2024",
-    date_of_conclusion:"September 2024"
+    date_of_commencement: "July 2024",
+    date_of_conclusion: "September 2024",
   },
 };
 export const ProjectSlice = createSlice({
-  name:"projectSlice",
-  initialState:ProjectState,
-  reducers:{
-
-  }
+  name: "projectSlice",
+  initialState: ProjectState,
+  reducers: {},
 });
-export const ProjectReducer=ProjectSlice.reducer;
+export const ProjectReducer = ProjectSlice.reducer;
 
-interface Blogs{
-  BlogOne:{
-    title:string,
-    description:string,
-    link:string
-  },
-  BlogTwo:{
-    title:string,
-    description:string,
-    link:string
-  },
-  BlogThree:{
-      title:string,
-    description:string,
-    link:string
-  },
-  BlogFour:{
-      title:string,
-    description:string,
-    link:string
-  }
+interface Blogs {
+  BlogOne: {
+    title: string;
+    description: string;
+    link: string;
+  };
+  BlogTwo: {
+    title: string;
+    description: string;
+    link: string;
+  };
+  BlogThree: {
+    title: string;
+    description: string;
+    link: string;
+  };
+  BlogFour: {
+    title: string;
+    description: string;
+    link: string;
+  };
 }
-const BlogState:Blogs={
-  BlogOne:{
-    title:"Async Thunk in redux",
-    description:"Learn how to handle async logic cleanly in Redux using async thunks for API calls and side effects.",
-    link:"https://medium.com/@vaibhavmathur128/using-async-thunk-in-redux-to-handle-api-with-demo-mini-project-baea1da0952d"
+const BlogState: Blogs = {
+  BlogOne: {
+    title: "Mastering Redux",
+    description:
+      "A deep dive into state management with Redux — from basics to advanced patterns.",
+    link: "https://medium.com/@vaibhavmathur128/redux-tool-kit-beginner-friendly-approach-with-live-project-80f644178b2e",
   },
-  BlogTwo:{
-    title:"Mastering Redux",
-    description:"   A deep dive into state management with Redux — from basics to advanced patterns.",
-    link:"https://medium.com/@vaibhavmathur128/redux-tool-kit-beginner-friendly-approach-with-live-project-80f644178b2e"
+  BlogTwo: {
+    title: "Async Thunk in redux",
+    description:
+      "Learn how to handle async logic cleanly in Redux using async thunks for API calls and side effects.",
+    link: "https://medium.com/@vaibhavmathur128/using-async-thunk-in-redux-to-handle-api-with-demo-mini-project-baea1da0952d",
   },
-  BlogThree:{
-    title:"First Order Array functions JavaScript",
-    description:"Explanation of most frequently used functions to operate in array, that are important in job interviews also ",
-    link:"https://www.linkedin.com/pulse/javascript-first-order-functions-every-frontend-developer-mathur-doboc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3D"
+  BlogThree: {
+    title: "First Order Array functions JavaScript",
+    description:
+      "Explanation of most frequently used functions to operate in array, that are important in job interviews also ",
+    link: "https://www.linkedin.com/pulse/javascript-first-order-functions-every-frontend-developer-mathur-doboc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3D",
   },
-  BlogFour:{
-    title:"Understanding the latest rendering engine of react",
-    description:"An interview guide based on personal experience, to explain what exactly is react fiber, how it is different from previous versions and why it was needed at the first place",
-    link:"https://www.linkedin.com/pulse/react-interview-prep-understanding-how-rendering-works-vaibhav-mathur-tblfc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3Dc"
-  }
-}
-export const BlogSlice=createSlice({
-  name:"BlogSlice",
-  initialState:BlogState,
-  reducers:{}
-})
-export const BlogReducer= BlogSlice.reducer
+  BlogFour: {
+    title: "Understanding the latest rendering engine of react",
+    description:
+      "An interview guide based on personal experience, to explain what exactly is react fiber, how it is different from previous versions and why it was needed at the first place",
+    link: "https://www.linkedin.com/pulse/react-interview-prep-understanding-how-rendering-works-vaibhav-mathur-tblfc/?trackingId=dQpxTZ2aT2OmZZKOev5kKA%3D%3Dc",
+  },
+};
+export const BlogSlice = createSlice({
+  name: "BlogSlice",
+  initialState: BlogState,
+  reducers: {},
+});
+export const BlogReducer = BlogSlice.reducer;

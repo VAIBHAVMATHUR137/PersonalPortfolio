@@ -1,16 +1,25 @@
 import Redux from "../Images/Redux.jpg";
 import Asyncthunk from "../Images/Asyncthunk.jpg";
-import Array from "../Images/Array.png";
+import ArrayImg from "../Images/Array.png"; 
+import fiber from "../Images/fiber.jpg";
 import { useSelector } from "react-redux";
 import { type RootState } from "../Redux/Store";
 import { ContactModal } from "./ContactModal";
-import fiber from "../Images/fiber.jpg";
 
 export const Blogs = () => {
   const contactFlag = useSelector(
     (state: RootState) => state.flipModal.contactModal,
   );
   const blogState = useSelector((state: RootState) => state.BlogData);
+
+  // Map local images to the corresponding blog data keys
+  const blogItems = [
+    { data: blogState.BlogOne, img: Redux },
+    { data: blogState.BlogTwo, img: Asyncthunk },
+    { data: blogState.BlogThree, img: ArrayImg },
+    { data: blogState.BlogFour, img: fiber },
+  ];
+
   return (
     <div className="flex flex-col bg-white w-full max-w-3xl mt-5 rounded-xl border border-gray-300 shadow">
       <div>
@@ -19,102 +28,37 @@ export const Blogs = () => {
         </h2>
       </div>
 
-      {/* Blog Card 1 */}
-
-      <a href={blogState.BlogOne.link} target="_blank">
-        <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
-          {/* Left Side: Image */}
-          <div className="w-1/2">
-            <img
-              src={Redux}
-              alt="Blog"
-              className="w-full aspect-video object-contain rounded-lg bg-gray-100"
-            />
-          </div>
-
-          {/* Right Side: Content */}
-          <div className="w-1/2 pl-4 flex flex-col justify-center">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {blogState.BlogOne.title}
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              {blogState.BlogOne.description}
-            </p>
-          </div>
-        </div>
-      </a>
-      <a href={blogState.BlogOne.link} target="_blank">
-        {/* Blog Card 2*/}
-
-        <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
-          {/* Left Side: Image */}
-          <div className="w-1/2">
-            <img
-              src={Asyncthunk}
-              alt="Blog"
-              className="w-full aspect-video object-contain rounded-lg bg-gray-100"
-            />
-          </div>
-
-          {/* Right Side: Content */}
-          <div className="w-1/2 pl-4 flex flex-col justify-center">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {blogState.BlogTwo.title}
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              {blogState.BlogTwo.description}
-            </p>
-          </div>
-        </div>
-
-        {/* Blog Card */}
-        <a href={blogState.BlogThree.link} target="_blank">
-          <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
+      {blogItems.map((blog, index) => (
+        <a 
+          key={index} 
+          href={blog.data.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <div className={`flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition ${index === blogItems.length - 1 ? 'rounded-b-xl' : ''}`}>
             {/* Left Side: Image */}
             <div className="w-1/2">
               <img
-                src={Array}
-                alt="Blog"
+                src={blog.img}
+                alt={blog.data.title}
                 className="w-full aspect-video object-contain rounded-lg bg-gray-100"
               />
             </div>
 
             {/* Right Side: Content */}
             <div className="w-1/2 pl-4 flex flex-col justify-center">
-              <h3 className="text-lg font-semibold text-gray-900">
-                {blogState.BlogThree.title}
+              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                {blog.data.title}
               </h3>
-              <p className="text-sm text-gray-600 mt-2">
-                {blogState.BlogThree.description}
+              <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+                {blog.data.description}
               </p>
             </div>
           </div>
         </a>
-        <a href={blogState.BlogThree.link} target="_blank"></a>
-      </a>
-      {/* Blog Card */}
-      <a href={blogState.BlogFour.link} target="_blank">
-        <div className="flex flex-row w-full border-t border-gray-200 p-4 hover:shadow-md transition rounded-b-xl">
-          {/* Left Side: Image */}
-          <div className="w-1/2">
-            <img
-              src={fiber}
-              alt="Blog"
-              className="w-full aspect-video object-contain rounded-lg bg-gray-100"
-            />
-          </div>
+      ))}
 
-          {/* Right Side: Content */}
-          <div className="w-1/2 pl-4 flex flex-col justify-center">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {blogState.BlogFour.title}
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              {blogState.BlogFour.description}
-            </p>
-          </div>
-        </div>
-      </a>
       {contactFlag && <ContactModal />}
     </div>
   );

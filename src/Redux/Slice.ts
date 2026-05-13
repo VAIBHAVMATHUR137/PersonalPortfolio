@@ -15,7 +15,7 @@ const initialContactState: ContactInterface = {
   Linkedin: "https://www.linkedin.com/in/vaibhav-mathur-a5415b350/",
   ContactNumber: 9911218069,
   Email: "Mathurvaibhav256@gmail.com",
-  X: "@Mathur128",
+  X: "@Mathur236",
   Github: "https://github.com/VAIBHAVMATHUR137",
   Location: "Ghaziabad, Uttar Pradesh, India",
   Medium: "https://medium.com/@vaibhavmathur128",
